@@ -38,7 +38,6 @@ public class DadataUtils {
                 byte[] requestBody = ("[ \"" + badAddress + "\"]").getBytes(StandardCharsets.UTF_8);
                 https.setFixedLengthStreamingMode(requestBody.length);
                 https.connect();
-
                 try(OutputStream os = https.getOutputStream()) {
                     os.write(requestBody);
                 }

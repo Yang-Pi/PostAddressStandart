@@ -31,8 +31,8 @@ public class AddressController {
 
             if (fullAddress.get("country") == null) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-
             }
+
             badAddress = new BadAddress();
             badAddress.setBadAddress(badAddressName);
             String goodAddressName = fullAddress.get("country") + ", " + fullAddress.get("result") + ", " + fullAddress.get("postal_code");
