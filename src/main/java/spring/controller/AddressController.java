@@ -35,7 +35,7 @@ public class AddressController {
 
             badAddress = new BadAddress();
             badAddress.setBadAddress(badAddressName);
-            String goodAddressName = fullAddress.get("country") + ", " + fullAddress.get("result") + ", " + fullAddress.get("postal_code");
+            String goodAddressName = fullAddress.get("postal_code") + ", " + fullAddress.get("country") + ", " + fullAddress.get("result");
             GoodAddress goodAddress = goodAddressService.findByName(goodAddressName);
             if (goodAddress == null) {
                 goodAddress = goodAddressService.addAddress(new GoodAddress(goodAddressName));
